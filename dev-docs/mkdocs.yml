@@ -10,9 +10,11 @@ nav:
   - Inicio: index.md
   - git:
       - Primeros Pasos: git/index.md
-      - Commit: git/commit.md
+      - Guardar cambios: git/save-changes.md
       - Branch: git/branch.md
-  # - Github: os/debian.md
+  # - Github
+  # - Github CLI
+  # - Github Actions
   # - Docker:
   #     - Instalacion:
 
