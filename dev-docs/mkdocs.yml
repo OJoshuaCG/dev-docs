@@ -11,6 +11,7 @@ nav:
   - git:
       - Primeros Pasos: git/index.md
       - Guardar cambios: git/save-changes.md
+      - Commit: git/commit.md
       - Branch: git/branch.md
   # - Github
   # - Github CLI
