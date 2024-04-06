@@ -22,6 +22,8 @@ git status
 - nothing to commit, working tree clean
 ```
 
+---
+
 ## Agregar archivos
 
 Este comando es muy simple, nos permitira agregar uno o mas achivos a la zona de `stage` para despues realizar un `commit`. Para ello podemos especificar el (los) archivo(s) o unicamente agregar todos con ayuda del punto (`.`)
@@ -32,6 +34,8 @@ git add file1 file2 ./path/file3
 # Agregar todos los archivos con cambios
 git add .
 ```
+
+---
 
 ## Remover archivos
 

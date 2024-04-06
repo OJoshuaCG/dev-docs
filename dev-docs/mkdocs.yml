@@ -12,7 +12,10 @@ nav:
       - Primeros Pasos: git/index.md
       - Guardar cambios: git/save-changes.md
       - Commit: git/commit.md
-      - Branch: git/branch.md
+      # - Branch: git/branch.md
+      # - Repositorios remotos: git/remote-repositories.md
+      # - gitignore: git/gitignore.md
+      # -
   # - Github
   # - Github CLI
   # - Github Actions
