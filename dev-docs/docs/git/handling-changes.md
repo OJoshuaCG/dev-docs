@@ -22,6 +22,7 @@ git status
 - nothing to commit, working tree clean
 ```
 
+
 ---
 
 ## Agregar archivos
@@ -34,6 +35,7 @@ git add file1 file2 ./path/file3
 # Agregar todos los archivos con cambios
 git add .
 ```
+
 
 ---
 
@@ -54,3 +56,51 @@ git restore file.txt
 <!-- Alternativas
 git rm --cached
 git reset -->
+
+
+---
+
+## Limpiando  archivos
+
+Hemos visto como agregar archivos y como eliminarlos de nuestra zona de `stage`, sin embargo, git tambien nos ofrece la capacidad de eliminar los archivos que no se encuentran en el **historial de git**.
+
+Por ejemplo, al crear un archivo o directorio nuevo que no hemos agregado previamente al historial (`git add`), git nos permite limpiar nuestro proyecto con ayuda del comando `git clean`, sin embargo, necesita de forzarse con ayuda de la bandera `-f`
+
+```sh
+git clean -f
+```
+
+Ademas de ello, podemos visualizar previamente los archivos que se van a limpiar con ayuda de la bandera `-n`
+
+```sh
+git clean -n
+```
+
+Sin embargo, esto lo realiza a nivel de archivos, para que pueda considerar los directorios (carpetas), debemos pasar la bandera `-d`
+
+```sh
+git clean -dn
+
+git clean -df
+```
+
+Al aplicar el comando `git clean -f` no considera los archivos ignorados de nuestro `.gitignore`, sin embargo, si deseamos eliminar estos archivos, podemos apoyarnos de la bandera `-x`
+
+```sh
+git clean -xn
+
+git clean -xf
+```
+
+!!! note "Nota"
+    Esta ultima bandera `-x` tambien considera los archivos, pero no los directorios, sin embargo podemos hacer una combinacion de las banderas, como por ejemplo
+
+    ```sh
+    git clean -xdn
+
+    git clean -xdf
+    ```
+
+
+!!! danger "Aviso"
+    Tenga cuidado al aplicar un `git clean` ya que puede eliminar archivos que deseamos conservar en nuestro proyecto.

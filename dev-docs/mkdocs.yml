@@ -10,8 +10,9 @@ nav:
   - Inicio: index.md
   - git:
       - Primeros Pasos: git/index.md
-      - Guardar cambios: git/save-changes.md
+      - Guardando cambios: git/handling-changes.md
       - Commit: git/commit.md
+      - Modificando proyecto: git/undoing-project.md
       # - Branch: git/branch.md
       # - Repositorios remotos: git/remote-repositories.md
       # - gitignore: git/gitignore.md
