@@ -104,3 +104,90 @@ git clean -xf
 
 !!! danger "Aviso"
     Tenga cuidado al aplicar un `git clean` ya que puede eliminar archivos que deseamos conservar en nuestro proyecto.
+
+
+---
+
+## Reservando archivos
+
+Dentro de nuestro proyecto, podemos estar trabajando en nuestros archivos, agregarlos a la zona de stage pero no realizar un commit, ya sea porque:
+
+- Necesitemos trabajar en otros archivos o caracteristica.
+- Deseamos revertir los cambios pero deseamos guardar nuestro progreso.
+- Son archivos o modificaciones que por el momento no necesitamos pero creemos utilizarlos en un futuro.
+
+Para ello, nos guiaremos del comando `git stash`, el cual nos permite reservar nuestros cambios y archivos que se encuentran en la zona de `stage`.
+
+```sh
+git stash
+```
+
+Es importante conocer que reservara archivos que esten en la zona de stage o archivos que hayan sido modificados y se encuentren en el historial de git.
+No reservara los archivos nuevos o archivos que esten en la lista del `.gitignore`.
+
+Sin embargo, podemos reservar los archivos nuevos que no esten en el historial de git (Untracked files).
+Para ello, nos apoyaremos de la bandera `-u`
+
+```sh
+git stash -u
+```
+
+Si deseamos incluir los archivos ignorados, nos apoyaremos de la bandera `-a`
+
+```sh
+git stash -a
+```
+
+
+Podemos agregar un mensaje a nuestro `stash` para identificarlo
+
+```sh
+git stash save "message"
+```
+
+El comando `stash` es acumulable, el cual, nos permite crear varias versiones
+
+```sh
+git stash list
+```
+
+
+### Recuperando archivos reservados
+
+Para recuperar los archivos reservados, podemos utilizar el comando `pop` o `apply`, la diferencia, es que `pop` recupera los archivos y elimina el stash del historial, y `apply` recupera los archivos y conserva el stash en el historial, esto puede ser util si deseamos aplicar el stash en otras ramas.
+
+Estos comandos recuperan el ultimo stash realizado (indice 0). Podemos elegir el stash que deseamos recuperar pasando su id.
+
+```sh
+git stash pop
+
+git stash apply
+
+git stash pop stash@{ID}
+# Por ejemplo
+git stash pop stash@{2}
+git stash apply stash@{3}
+```
+
+
+### Limpiando stash
+
+Si ya no deseamos un stash en especifico podemos realizarlo con ayuda del comando `drop`.
+O si ya no deseamos tener los stash, podemos eliminarlos con el comando `clean`.
+
+```sh
+git stash drop stash@{2}
+
+git stash clean
+```
+
+
+### Stash parciales
+
+Con `git stash` no es necesario reservar los cambios de un archivo completo, si no, podemos reservar tambien solo algunos cambios de cierto archivo o solo algunos archivos, esto, con ayuda de la bandera `-p`
+
+```sh
+git stash -p
+```
+
+Esto nos abrira una linea de comandos interactiva la cual es primera instancia, podemos ingresar `?` para que nos muestre el significado de cada inicial.
