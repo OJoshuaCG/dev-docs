@@ -5,5 +5,11 @@ Docker
     Comandos
 
 Git
+    git log
+    git bisect
+    git blame
+
+    git tag (?)
+
 
 Neovim (?)

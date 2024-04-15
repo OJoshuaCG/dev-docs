@@ -1,4 +1,8 @@
-Cuando trabajamos con Git en un proyecto, desearemos guardar nuestros cambios del proyecto para despues realizar el famoso `commit`, sin embargo, antes de ejecutar este comando debemos agregar (`add`) archivos que deseamos hacer commit, estos archivos se encontraran en la zona de `stage`, ademas, si contamos con archivos los cuales no deseamos agregar al commit, podemos reservarlos con el comando `stash`, los cuales no se tomaran en cuenta al realizar nuestro commit.
+Cuando trabajamos con Git en un proyecto, desearemos guardar nuestros cambios para despues realizar el famoso `commit`, sin embargo, antes de ejecutar este comando debemos agregar (`add`) archivos que deseamos hacer commit, estos archivos se encontraran en la zona de `stage`.
+
+Sin embargo, durante esta zona (zona de `stage`) podemos realizar varias acciones, como remover archivos de esta zona,  ademas, si contamos con archivos los cuales no deseamos agregar al commit, podemos reservarlos con el comando `stash`, los cuales no se tomaran en cuenta al realizar nuestro commit.
+
+Durante este proceso,
 
 
 ## Estado del proyecto
@@ -45,17 +49,21 @@ Dentro de git, cuando estamos agregando archivos, los colocamos en la zona `stag
 
 ```sh
 git restore --staged file.txt
+
+git restore --staged . # (1)
 ```
+
+1. Removemos todos los archivos de la zona de `stage`, manteniendo los cambios realizados sobre ellos.
 
 Si deseamos revertir los cambios de un archivo (remover todos los cambios que le hemos realizado), podemos utilizar el mismo comando sin ayuda de alguna bandera
 
 ```sh
 git restore file.txt
+
+git restore . # (1)
 ```
 
-<!-- Alternativas
-git rm --cached
-git reset -->
+1. Restauramos todos los archivos que sufrieron cambios y que se encuentren en el historial de `git`
 
 
 ---
@@ -152,6 +160,8 @@ git stash list
 ```
 
 
+---
+
 ### Recuperando archivos reservados
 
 Para recuperar los archivos reservados, podemos utilizar el comando `pop` o `apply`, la diferencia, es que `pop` recupera los archivos y elimina el stash del historial, y `apply` recupera los archivos y conserva el stash en el historial, esto puede ser util si deseamos aplicar el stash en otras ramas.
@@ -169,6 +179,8 @@ git stash pop stash@{2}
 git stash apply stash@{3}
 ```
 
+
+---
 
 ### Limpiando stash
 
@@ -190,4 +202,8 @@ Con `git stash` no es necesario reservar los cambios de un archivo completo, si 
 git stash -p
 ```
 
-Esto nos abrira una linea de comandos interactiva la cual es primera instancia, podemos ingresar `?` para que nos muestre el significado de cada inicial.
+Esto nos abrira una linea de comandos interactiva la cual es primera instancia, podemos ingresar `?` para que nos muestre el significado de cada inicial y asi realizar el stash todo el archivo, omitir el archivo o de un 'chunk' en especifico de nuestro archivo.
+
+
+!!! note "Nota"
+    El comando `git stash` es un comando que se ejecuta y funciona a nivel local, de modo que al trabajar en un repositorio remoto, los `stash` existentes no se enviaran a él, unicamente existiran en nuestra maquina local.

@@ -1,3 +1,10 @@
+En algunas ocasiones, cuando trabajamos con git, tendemos a equivocarnos al realizar un commit, tal vez un archivo no deseabamos que estuviera en ese commit, el commit no tiene relevancia, nos hemos equivocado en su contenido o algo mas.
+
+En esta seccion visualizaremos como eliminar un commit (`reset`) y como revertir un commit `revert`.
+
+
+---
+
 ## Resetear commit
 
 Dentro de git, podemos resetear o eliminar nuestro commit, con ayuda del commando `reset`.
