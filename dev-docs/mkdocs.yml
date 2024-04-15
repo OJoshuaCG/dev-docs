@@ -13,7 +13,7 @@ nav:
       - Guardando cambios: git/handling-changes.md
       - Commit: git/commit.md
       - Modificando proyecto: git/undoing-project.md
-      # - Branch: git/branch.md
+      - Branch: git/branch.md
       # - Repositorios remotos: git/remote-repositories.md
       # - gitignore: git/gitignore.md
       # -
