@@ -1,4 +1,4 @@
-## DDL ("Data Definition Language" o Lenguaje de Definicion de Datos)
+**DDL ("Data Definition Language" o Lenguaje de Definicion de Datos)**
 
 Estos son comandos que pueden ser utilizados para definir el esquema de nuestra base de datos, como la creacion (`CREATE`), eliminar (`DROP`), modificar (`ALTER`) y truncar (`TRUNCATE`).
 
@@ -31,7 +31,7 @@ CREATE INDEX index_name ON tbl_name(
 
 ## `DROP`
 
-Con el comando `DROP` nos permitira eliminar bases de datos o sus objetos
+Con el comando `DROP` nos permitira eliminar bases de datos o sus objetos.
 
 Algunos ejemplos:
 
@@ -39,6 +39,10 @@ Algunos ejemplos:
 DROP TABLE tbl_name;
 
 DROP DATABASE databse;
+
+DROP VIEW view_name;
+
+DROP TABLE IF EXISTS tbl_name
 ```
 
 

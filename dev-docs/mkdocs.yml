@@ -17,6 +17,12 @@ nav:
       # - Repositorios remotos: git/remote-repositories.md
       # - gitignore: git/gitignore.md
       # -
+
+  - sql:
+      # - Usuarios: sql/users.md
+      - DML: sql/dml.md
+      - DDL: sql/ddl.md
+      # - DCL: sql/dcl.md
   # - Github
   # - Github CLI
   # - Github Actions

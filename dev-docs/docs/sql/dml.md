@@ -1,4 +1,4 @@
-## DML ("Data Manipulation Language" o Lenguaje de Manipulacion de Datos)
+DML ("Data Manipulation Language" o Lenguaje de Manipulacion de Datos)
 
 Estos comandos nos permiten interactuar con la informacion de nuestras tablas. Gracias a ellas podremos consultar, insertar, actualizar o eliminar la informacion.
 
@@ -42,7 +42,7 @@ La sentencia `UPDATE` es utilizado para actualizar la informacion existente en l
 Suele estar acompañada del comando `WHERE`, el cual permitira realizar la actualizacion de datos de acuerdo a una condicion establecida.
 
 ```sql
-UPDATE tbl_name SET column1 = value1, column2 = value2, ...; # (1)
+UPDATE tbl_name SET column1 = value1, column2 = value2, ...; -- (1)
 
 UPDATE tbl_name SET column1 = value1, column2 = value2, ...
 WHERE condition;
@@ -56,12 +56,14 @@ WHERE condition;
 
 El comando `DELETE`, es una operacion utilizada para eliminar la informacion en nuestras tablas.
 
-Al igual que el comando `UPDATE`, es comun ser utilizada con el comando `WHERE`.
+A diferencia del comando `DROP`, `DELETE` preserva la tabla, unicamente realiza la eliminacion de las fila(s) de las tabla
+
+Al igual que el comando `UPDATE`, es comun ser utilizado con el comando `WHERE`.
 
 ```sql
-DELETE FROM tbl_name; # (1)
+DELETE FROM tbl_name; -- (1)
 
-DELETE * FROM tbl_name; # (2)
+DELETE * FROM tbl_name; -- (2)
 
 DELETE FROM tbl_name WHERE condition
 ```
