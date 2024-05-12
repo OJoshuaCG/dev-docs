@@ -19,10 +19,10 @@ nav:
       # -
 
   - sql:
-      # - Usuarios: sql/users.md
+      - Usuarios: sql/users.md
       - DML: sql/dml.md
       - DDL: sql/ddl.md
-      # - DCL: sql/dcl.md
+      - DCL: sql/dcl.md
   # - Github
   # - Github CLI
   # - Github Actions

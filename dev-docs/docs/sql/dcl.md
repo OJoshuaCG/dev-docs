@@ -29,7 +29,7 @@ GRANT SELECT ON db.tbl_name TO 'user1'@'host1', 'user2'@'host2'; -- (7)
 
 1. Permitir utilizar el comando `SELECT` en una tabla en especifico con el usuario unicamente en `localhost`.
 2. Permitir utilizar los comandos DML en todas las tablas de una base de datos.
-3. Permitir utilizar el comando `SELECT` en cualquier base de Sdatos y en cualquier tabla, unicamente en `localhost`.
+3. Permitir utilizar el comando `SELECT` en cualquier base de datos y en cualquier tabla, unicamente en `localhost`.
 4. Permitir utilizar todos los comandos.
 5. Permitir utilizar el comando `SELECT` en una tabla en especifico con el usuario unicamente conectado en la IP `199.91.1.10`
 6. Permitir utilizar el comando `SELECT` en una tabla en especifico con el usuario el cualquier `HOST` (`%`).
@@ -44,11 +44,12 @@ USE mysql;
 SHOW GRANTS FOR 'user'@'host';
 ```
 
+
 ---
 
 ## REVOKE
 
-Permite revocar los accesos a los privilegios que se han otorgado con el comando `GRANT`.
+Permite revocar los privilegios que se han otorgado con el comando `GRANT`.
 
 Funciona muy similar al comando `GRANT`, la unica diferencia es que cambia la instruccion `TO` por `FROM`.
 
@@ -93,3 +94,10 @@ REVOKE ALL PRIVILEGES ON *.* FROM 'user'@'host';
 - SUPER
 - TRIGGER
 - UPDATE
+
+
+---
+
+## Fuentes
+
+- [Mysql Dev Docs](https://dev.mysql.com/doc/refman/8.0/en/grant.html)

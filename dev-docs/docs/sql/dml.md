@@ -1,4 +1,4 @@
-DML ("Data Manipulation Language" o Lenguaje de Manipulacion de Datos)
+**DDML ("Data Manipulation Language" o Lenguaje de Manipulacion de Datos)**
 
 Estos comandos nos permiten interactuar con la informacion de nuestras tablas. Gracias a ellas podremos consultar, insertar, actualizar o eliminar la informacion.
 
