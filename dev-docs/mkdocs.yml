@@ -28,7 +28,7 @@ nav:
   # - Github Actions
   - Docker:
       - Instalacion: docker/index.md
-      - Base de datos: docker/database-images.md
+      - Base de datos: docker/databases-images.md
 
 # CSS file custom
 extra_css:
