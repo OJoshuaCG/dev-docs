@@ -15,7 +15,7 @@ docker run --detach --name dbmaria -p 3306:3306 --env MARIADB_ROOT_PASSWORD=pass
 Despues de crear el contenedor, consideraremos los siguientes parametros de conexion:
 
 - User: `root`
-- Password: `my-secret-pw`
+- Password: `password`
 - Host: `localhost`
 - Port: `3306`
 
