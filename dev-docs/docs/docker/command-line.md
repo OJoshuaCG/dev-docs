@@ -32,7 +32,7 @@ Permite ejecutar y crear un contenedor a traves de una imagen, esta imagen sera 
 Suele acompañarse este comando junto con algunas banderas.
 
 | Bandera | Funcion |
-| :---: | --- |
+| :--- | --- |
 | `-d, --detach` | Ejecutar imagen en segundo plano (background) |
 | `--name`  | Asigna un nombre al contenedor que desea crearse |
 | `-p, --publish` | Mapeo de puertos (`puerto-host:puerto-contenedor`, `8080:80`) |
@@ -77,3 +77,46 @@ docker run -d --name mi-app --env-file ./variables.env -p 5000:5000 mi-aplicacio
 docker run -d --name phpmyadmin -p 8081:80 --link mi-db:db -e PMA_HOST=db phpmyadmin/phpmyadmin
 ```
 
+
+## `exec`
+
+Nos permite interactuar con el contenedor ejecutando comandos dentro de el, gracias a este comando poder ingresar a la terminal de nuestro contenedor.
+
+Se cuentan con algunas banderas disponibles del comando `docker run`, como por ejemplo:
+
+| Bandera | Funcion |
+| :--- | --- |
+| `-d, --detach` | Ejecutar el comando en segundo plano (background) |
+| `-i, --interactive` | Mantiene la entrada del teclado activa |
+| `-t, --tty` | Asigna o abre una terminal dentro del contenedor |
+| `-it` | Combinacion de las 2 banderas anteriores, permite interactuar con el contenedor a traves de la terminal |
+| `-u, --user` | Ejecuta el comando con un usuario en especifico. |
+| `-w, --workdir` | Ubicacion donde se ejecutara el comando. |
+| `-e, --env` | Establece variables de entorno |
+| `--privileged` | Otorga al comando privilegios elevados. |
+| `--cpu-shares` Asigna acciones de CPU al comando. |
+```sh
+# Visualizaremos el directorio actual
+docker exec mi_contenedor ls -l
+
+# Acceso directo a la terminal activa del contenedor
+docker exec -it mi_contenedor /bin/bash
+
+# Ejecutar un comando como un usuario específico
+docker exec -u www-data mi_contenedor php artisan migrate
+
+# Ejecutar un comando en un directorio de trabajo específico
+docker exec -w /var/www mi_contenedor ls -l
+
+# Ejecutar un comando con variables de entorno:
+docker exec -e DEBUG=true mi_contenedor python my_script.py
+
+# Ejecutar un comando en un contenedor en segundo plano (detached)
+docker exec -d mi_contenedor /app/mi_script_largo.sh
+
+# Ejecutar un comando con privilegios elevados
+docker exec --privileged mi_contenedor iptables -L
+
+# Asignar más recursos a un comando
+docker exec --cpu-shares 512 mi_contenedor ./mi_programa_intensivo
+```
