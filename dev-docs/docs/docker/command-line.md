@@ -95,6 +95,7 @@ Se cuentan con algunas banderas disponibles del comando `docker run`, como por e
 | `-e, --env` | Establece variables de entorno |
 | `--privileged` | Otorga al comando privilegios elevados. |
 | `--cpu-shares` Asigna acciones de CPU al comando. |
+
 ```sh
 # Visualizaremos el directorio actual
 docker exec mi_contenedor ls -l
